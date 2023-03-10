@@ -72,7 +72,7 @@ const navigationConfig = [
     title: "coupon",
     icon: <FaEllo size={20} />,
     type: "item",
-    navLink: "/coupon",
+    navLink: "/dashboard/coupon",
   
     
     
@@ -82,7 +82,7 @@ const navigationConfig = [
     title: "supported_city",
     icon: <FaCity size={20} />,
     type: "item",
-    navLink: "/supportedcity",
+    navLink: "/dashboard/supportedcity",
   
     
     

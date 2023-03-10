@@ -141,7 +141,7 @@ class AppRouter extends React.Component {
           />
                  <AppRoute
             exact
-            path="/supportedcity"
+            path="/dashboard/supportedcity"
             component={SupportedCityPage }
             isPrivate
           />
