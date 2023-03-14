@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "reactstrap";
-import {Field,FieldImg, FieldNone, FieldOption} from "./Field";
+import {Field,FieldImg, FieldOption} from "./Field";
 const ModelForm = ({ ModelData }) => {
   const col1Items = ModelData?.filter(item => item.col === 1);
   const col2Items = ModelData?.filter(item => item.col === 2);
@@ -10,8 +10,6 @@ const ModelForm = ({ ModelData }) => {
         {col1Items.map((item) => {
           const { type } = item;
           switch (type) {
-            case "none":
-              return <FieldNone  item={item}  />;
             case "select":
               return <FieldOption  item={item}  />;
             case "image":
@@ -26,8 +24,6 @@ const ModelForm = ({ ModelData }) => {
           {col2Items.map((item) => {
             const { type } = item;
             switch (type) {
-              case "none":
-                return <FieldNone  item={item}  />;
               case "select":
                 return <FieldOption  item={item}  />;
               case "image":

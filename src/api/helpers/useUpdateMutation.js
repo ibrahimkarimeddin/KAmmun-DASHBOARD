@@ -37,7 +37,7 @@ export const  useUpdateMutation2 = (key, url,toastMessage=true) => {
   return useMutation(
     async (dataToSend) => {
       const { data } = await axios.put(url, dataToSend);
-      return data;  
+      return data;
     },
     {
       onSuccess: ({ message }) => {

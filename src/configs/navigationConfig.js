@@ -6,6 +6,11 @@ import { MdPrivacyTip } from "react-icons/md";
 import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
 import { BsInfoCircle,} from "react-icons/bs"
 import { ImLocation } from "react-icons/im"
+import {FaUserFriends , FaCity ,FaWarehouse,FaEllo} from "react-icons/fa"
+import { MdPrivacyTip } from "react-icons/md";
+import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
+import { BsInfoCircle,} from "react-icons/bs"
+
 
 const navigationConfig = [
   {
@@ -47,9 +52,10 @@ const navigationConfig = [
         
         
       },
-    
+
     ]
-  },
+      },
+
  
   {
     id: "warehouse",
@@ -77,11 +83,11 @@ const navigationConfig = [
   },
   
   {
-    id: "address",
-    title: "address",
-    icon: <ImLocation size={20} />,
+    id: "coupon",
+    title: "coupon",
+    icon: <FaEllo size={20} />,
     type: "item",
-    navLink: "/dashboard/address",
+    navLink: "/coupon",
   
     
     
@@ -100,11 +106,13 @@ const navigationConfig = [
     icon: <FaCity size={20} />,
     type: "item",
     navLink: "/dashboard/supportedcity",
+    navLink: "/supportedcity",
   
     
     
   },
  
+
   // {
   //   id: "order",
   //   title: "order",

@@ -9,17 +9,16 @@ import './Page.scss';
 import { SearchInput } from 'components/input';
 import {  convert_data_Search_select, filterDataByDynamicValue } from './model/Field';
 import Select from "react-select";
-
 const Page = (props) => {
   const t = useTranslation();
-  const Data = props?.data || [];
+  const Data = props?.GetMutation?.data?.data || [];
   const [isOpen, setisOpen] = useState(false)
-  const [objectToEdit, setobjectToEdit] = useState([])
-  const column = props?.useTableColumns(props?.DatadeleteMutation, setisOpen,setobjectToEdit)
+  const [objectToEdit, setobjectToEdit] = useState()
+  const column = props?.useTableColumns(props?.DatadeleteMutation, setisOpen)
   const [searchText, setSearchText] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [SearchBy, setSearchBy] = useState(props?.SearchBy)
-
+  const totalRows  = 10 ;
   const handleAddClick = () => {
     setisOpen(true);
     setobjectToEdit([]);
@@ -39,6 +38,7 @@ const Page = (props) => {
     return <pre> <h4>{t(props?.Expand)}</h4>  {t(data[props?.Expand])}</pre>;
   };
 
+
   return (
     <div className="Page">
       <div className='K_Flex'>
@@ -55,13 +55,14 @@ const Page = (props) => {
           <DataTable
             columns={column}
             data={searchText ? filteredData : Data}
-            progressPending={props?.isLoading}
+            progressPending={props?.GetMutation?.isLoading}
             progressComponent={<TableSpinner />}
             noDataComponent={<h6 className="my-4">{t("no_records")}</h6>}
             noHeader
             pagination
             expandableRows={!!props?.Expand}
             expandableRowsComponent={ props?.Expand ? <MyExpandableComponent /> : undefined }
+      
           />
         </CardBody>
       </Card>

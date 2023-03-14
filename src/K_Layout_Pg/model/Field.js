@@ -6,6 +6,7 @@ import { useImagePreview } from 'hooks';
 import { useTranslation } from 'utility/language'
 export  function Field({ item }) {
     const t = useTranslation();
+
   return (
     <ValidatedField
       id={item?.name}
@@ -36,29 +37,14 @@ export  function FieldOption({ item }) {
     const formik = useFormikContext();
   return (
   <>
- <SelectField label={t(item?.name)} options={convert_data_to_select(item?.option)} name={item?.name}
+ <SelectField label={t(item?.name)} options={convert_data_to_select(item?.option?.data)} name={item?.name}
     onChange={(opt) => { formik.setFieldValue(item?.name, opt.value) }} required />
   </>
           
 
   );
 };
-export  function FieldNone({ item }) {
-  const t = useTranslation();
 
-return (
-  <div className="none">
-     <ValidatedField
-    id={item?.name}
-    type={item?.type} 
-    label={t(item?.name)}
-    name={item?.name}
-    placeholder={t(item?.name)}
-  />
-  </div>
- 
-);
-};
 export const filterDataByDynamicValue = (data, searchValue, searchKey) => {
   const lowercaseSearchValue = searchValue?.toLowerCase();
 

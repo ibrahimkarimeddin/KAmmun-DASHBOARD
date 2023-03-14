@@ -28,7 +28,7 @@ const ValidatedField = ({
   const fieldProps = props.type === "file" ? {} : { ...field };
 
   return (
-    <div key={name}>
+    <>
       {(label && props.type !== "hidden")  && (
         <label htmlFor={name}>
           {label} {props.required || isRequired ? "*" : ""} {labelIcon}
@@ -42,6 +42,7 @@ const ValidatedField = ({
           className={
             "form-control " + (meta.touched && meta.error ? "is-invalid" : "")
           }
+          key={name} // added key prop to Wrapper
           {...fieldProps}
           {...props}
         />
@@ -54,7 +55,7 @@ const ValidatedField = ({
           {(msg) => <span className="field-error text-danger">{t(msg)}</span>}
         </ErrorMessage>
       </FormGroup>
-    </div>
+    </>
   );
 };
 
