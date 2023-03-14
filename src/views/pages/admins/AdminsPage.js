@@ -30,12 +30,7 @@ const AdminsPage = (props) => {
   const filterPagination = usePagination();
   const [search, setSearchText] = React.useState("");
   const filterIsApplied = search !== "" || SelectedWareHouse;
-  React.useEffect(() => {
-    if (filterIsApplied) {
-      filterPagination.handlePageChange(0);
-    }
-    //eslint-disable-next-line
-  }, [search, filterIsApplied]);
+
   React.useEffect(() => {
     if (filterIsApplied) { filterPagination.handlePageChange(0); }
   }, [search, filterIsApplied]);
@@ -107,7 +102,6 @@ const AdminsPage = (props) => {
             noHeader
             pagination
             paginationServer
-
             paginationComponent={() => (
               <ReactPaginate
                 previousLabel={<ChevronLeft size={15} />}

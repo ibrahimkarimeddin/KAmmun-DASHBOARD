@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { useDeleteCategory, useUpdateCategoryStatus } from "api/categories";
 import { useTranslation } from "utility/language";
 import Actions from "components/table/TableActions";
 import { ToggleStatus } from "components/ToggleStatus";

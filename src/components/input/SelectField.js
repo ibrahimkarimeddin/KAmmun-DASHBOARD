@@ -18,6 +18,7 @@ const SelectField = ({ label, name, options, ...props }) => {
       value={options?.find((opt) => opt.value === formik.values[name]) || ""}
       onChange={(opt) => formik.setFieldValue(name, opt.value)}
       onBlur={() => formik.setFieldTouched(name)}
+      key={name}
       {...props}
     />
   );

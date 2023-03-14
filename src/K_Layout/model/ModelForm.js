@@ -5,35 +5,35 @@ const ModelForm = ({ ModelData }) => {
   const col1Items = ModelData?.filter(item => item.col === 1);
   const col2Items = ModelData?.filter(item => item.col === 2);
   return (
-    <Row xs={1} sm={1} md={1} lg={2} xl={2} className="p-2">
+    <Row xs={1} sm={1} md={1} lg={2} xl={2} className="p-2" >
       <Col>
-        {col1Items.map((item) => {
+        {col1Items.map((item,index) => {
           const { type } = item;
           switch (type) {
             case "none":
-              return <FieldNone  item={item}  />;
+              return <FieldNone key={index} item={item}  />;
             case "select":
-              return <FieldOption  item={item}  />;
+              return <FieldOption key={index} item={item}  />;
             case "image":
-              return <FieldImg  item={item}   />;
+              return <FieldImg key={index} item={item}   />;
             default:
-              return <Field  item={item}  />;
+              return <Field key={index} item={item}  />;
           }
         })}
       </Col>
       {col2Items.length > 0 && (
         <Col>
-          {col2Items.map((item) => {
+          {col2Items.map((item,index) => {
             const { type } = item;
             switch (type) {
               case "none":
-                return <FieldNone  item={item}  />;
+                return <FieldNone key={index} item={item}  />;
               case "select":
-                return <FieldOption  item={item}  />;
+                return <FieldOption key={index} item={item}  />;
               case "image":
-                return <FieldImg  item={item}  />;
+                return <FieldImg key={index} item={item}  />;
               default:
-                return <Field  item={item}  />;
+                return <Field key={index} item={item}  />;
             }
           })}
         </Col>

@@ -1,11 +1,11 @@
 import React from "react";
 import { Home } from "react-feather";
-import { AiFillQuestionCircle,AiOutlineUser} from "react-icons/ai"
-import {FaUserFriends , FaCity ,FaWarehouse,FaEllo} from "react-icons/fa"
+import { AiFillQuestionCircle} from "react-icons/ai"
+import {FaUserFriends , FaCity ,FaWarehouse,FaEllo,FaUserShield,FaUserTie} from "react-icons/fa"
 import { MdPrivacyTip } from "react-icons/md";
 import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
 import { BsInfoCircle,} from "react-icons/bs"
-
+import { ImLocation } from "react-icons/im"
 
 const navigationConfig = [
   {
@@ -34,10 +34,19 @@ const navigationConfig = [
         id: "users",
         title: "users",
         type: "item",
-        icon: <AiOutlineUser size={20} />,
+        icon: <FaUserTie size={20} />,
         navLink: "/dashboard/user",
       },
-
+      {
+        id: "role",
+        title: "role",
+        icon: <FaUserShield size={20} />,
+        type: "item",
+        navLink: "/dashboard/role",
+      
+        
+        
+      },
     
     ]
   },
@@ -68,11 +77,21 @@ const navigationConfig = [
   },
   
   {
-    id: "coupon",
-    title: "coupon",
+    id: "address",
+    title: "address",
+    icon: <ImLocation size={20} />,
+    type: "item",
+    navLink: "/dashboard/address",
+  
+    
+    
+  },
+  {
+    id: "category",
+    title: "category",
     icon: <FaEllo size={20} />,
     type: "item",
-    navLink: "/dashboard/coupon",
+    navLink: "/dashboard/category",
   
     
     
@@ -87,7 +106,7 @@ const navigationConfig = [
     
     
   },
-
+ 
   // {
   //   id: "order",
   //   title: "order",

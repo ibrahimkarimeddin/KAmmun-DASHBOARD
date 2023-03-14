@@ -2,13 +2,16 @@ import { buildFormData } from "api/helpers";
 import * as Yup from "yup";
 export const getInitialValues = (objectToEdit) => {
   return {
-    name: objectToEdit?.name ?? '',
-    phone: objectToEdit?.phone ?? '',
-    platform_type: objectToEdit?.platform_type ?? '',
-    supported_city: objectToEdit?.supported_city?.name ?? '',
-    limit_total_cost: objectToEdit?.limit_total_cost ?? '',
-    warehouse:objectToEdit?.warehouse?.name??"",
-    order_count:objectToEdit?.order_count??"",
+    supported_city_id: objectToEdit?.supported_city_id ?? '',
+    street: objectToEdit?.street ?? '',
+    building: objectToEdit?.building ?? '',
+    entrance: objectToEdit?.entrance ?? '',
+    floor: objectToEdit?.floor ?? '',
+    address_title:objectToEdit?.address_title??"",
+    longitude:objectToEdit?.longitude??"",
+    latitude:objectToEdit?.latitude??"",
+    description:objectToEdit?.description??"",
+
 
   };
 };

@@ -4,7 +4,7 @@ const Copyright = () => {
   return (
     <>
       <a href="https://sdnone.net" target="_blank" rel="noopener noreferrer">
-        SDNone
+        Karim aldeen
       </a>{" "}
       &copy; 2022 | All Rights Reserved
     </>

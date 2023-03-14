@@ -25,18 +25,14 @@ const Page = (props) => {
     setobjectToEdit([]);
   };
   useEffect(() => {
-    if (Array.isArray(Data)) {
       if (searchText) {
         setFilteredData(
           filterDataByDynamicValue(Data, searchText, SearchBy)
-        );
-      } else {
-        setFilteredData(Data);
+        )
       }
-    }
-  }, [searchText, Data]);
+  }, [searchText]);
   const MyExpandableComponent = ({ data }) => {
-    return <pre> <h4>{t(props?.Expand)}</h4>  {t(data[props?.Expand])}</pre>;
+    return <pre> <h4>{t(props?.Expand)}</h4>  {t(data[props?.Expand]??"null")}</pre>;
   };
 
   return (
@@ -44,8 +40,8 @@ const Page = (props) => {
       <div className='K_Flex'>
         <AddButton onClick={handleAddClick} />
         <div  className='KK_Flex'>
-                  <SearchInput onChange={setSearchText} placeholder={t("search by")}  />
-                  <Select placeholder={t("SearchBy")} options={convert_data_Search_select(props?.selecter)}
+                  <SearchInput onChange={setSearchText} placeholder={t(`search here..`)}  />
+                  <Select placeholder={t(`${props?.SearchBy??"search"}`)} options={convert_data_Search_select(props?.selecter)}
                    name="status" onChange={(opt) => { setSearchBy(opt.value); }} />  
                          </div>
       </div>
@@ -61,7 +57,7 @@ const Page = (props) => {
             noHeader
             pagination
             expandableRows={!!props?.Expand}
-            expandableRowsComponent={ props?.Expand ? <MyExpandableComponent /> : undefined }
+            expandableRowsComponent={!!props?.Expand ? <MyExpandableComponent /> : null}
           />
         </CardBody>
       </Card>

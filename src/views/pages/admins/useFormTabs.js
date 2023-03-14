@@ -7,6 +7,7 @@ import BasicInfo from "./admin_tabs/BasicInfo";
 import AdminSubWareHoues from "./admin_tabs/AdminSubWareHoues";
 
 const useFormTabs = (status, data) => {
+  
   const t = useTranslation();
   let tabs = [
     {

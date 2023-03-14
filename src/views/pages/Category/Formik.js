@@ -3,13 +3,11 @@ import * as Yup from "yup";
 export const getInitialValues = (objectToEdit) => {
   return {
     name: objectToEdit?.name ?? '',
-    phone: objectToEdit?.phone ?? '',
-    platform_type: objectToEdit?.platform_type ?? '',
-    supported_city: objectToEdit?.supported_city?.name ?? '',
-    limit_total_cost: objectToEdit?.limit_total_cost ?? '',
-    warehouse:objectToEdit?.warehouse?.name??"",
-    order_count:objectToEdit?.order_count??"",
-
+    delivery_price: objectToEdit?.delivery_price ?? '',
+    is_active: objectToEdit?.is_active ?? '',
+    warehouse_id: objectToEdit?.warehouse_id ?? '',
+    support_phone_number: objectToEdit?.support_phone_number ?? '',
+    coupon_type_id:objectToEdit?.coupon_type_id??"",
   };
 };
 
