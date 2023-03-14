@@ -10,8 +10,7 @@ export const AddButton = ({ children, ...props }) => {
     <Button
       color="primary" 
       {...props}
-      className={`px-1 ${props.className ?? ""}`}
-    >
+      className={`px-1 ${props.className ?? ""}`}>
       <Plus size={15} />
       <span style={{ marginLeft: "1px", marginRight: "1px" }}>
         {children || t("add")}

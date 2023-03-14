@@ -2,11 +2,10 @@ import React from "react";
 import { Home } from "react-feather";
 import { AiFillQuestionCircle} from "react-icons/ai"
 import {FaUserFriends , FaCity ,FaWarehouse,FaEllo,FaUserShield,FaUserTie} from "react-icons/fa"
+import { MdPrivacyTip } from "react-icons/md";
 import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
 import { BsInfoCircle,} from "react-icons/bs"
 import { ImLocation } from "react-icons/im"
-import { MdPrivacyTip } from "react-icons/md";
-
 
 const navigationConfig = [
   {
@@ -48,7 +47,7 @@ const navigationConfig = [
         
         
       },
-
+    
     ]
       },
 
@@ -79,11 +78,21 @@ const navigationConfig = [
   },
   
   {
-    id: "coupon",
-    title: "coupon",
+    id: "address",
+    title: "address",
+    icon: <ImLocation size={20} />,
+    type: "item",
+    navLink: "/dashboard/address",
+  
+    
+    
+  },
+  {
+    id: "category",
+    title: "category",
     icon: <FaEllo size={20} />,
     type: "item",
-    navLink: "/coupon",
+    navLink: "/dashboard/category",
   
     
     
@@ -102,17 +111,11 @@ const navigationConfig = [
     icon: <FaCity size={20} />,
     type: "item",
     navLink: "/dashboard/supportedcity",
-    navLink: "/supportedcity",
   
     
     
   },
  
-
-  // {
-  //   id: "order",
-  //   title: "order",
-  //   icon: <DiDatabase size={20} />,
   //   type: "item",
   //   navLink: "/orders",
   

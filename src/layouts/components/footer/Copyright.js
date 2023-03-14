@@ -5,7 +5,6 @@ const Copyright = () => {
     <>
       <a href="https://sdnone.net" target="_blank" rel="noopener noreferrer">
         Karim aldeen
-        
       </a>{" "}
       &copy; 2022 | All Rights Reserved
     </>

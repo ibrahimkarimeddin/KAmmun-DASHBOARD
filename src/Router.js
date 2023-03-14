@@ -7,7 +7,8 @@ import { ContextLayout } from "./utility/context/Layout";
 import { AuthComponent } from "Mix/AuthComponent";
 import Loading from "Mix/Loading";
 import Redirec from "views/pages/Redirect/Redirect";
-import CategoryPage from "views/pages/Category/CategoryPage";
+const RolePage = lazy(() => import("views/pages/Role/RolePage"));
+const AddressPage = lazy(() => import("views/pages/Address/AddressPage"));
 
 
 
@@ -21,9 +22,12 @@ const PrivacyPage = lazy(() =>import("./views/pages/information/privacy/PrivacyP
 const AboutUsPage = lazy(() =>import("./views/pages/information/about_us/AboutUsPage"));
 const DeliveryMethodPage = lazy(() => import("views/pages/delivery_method/Page"));
 const Banner_Page = lazy(() => import("views/pages/Banner/BannerPage"));
-const UserPage = lazy(() => import("views/pages/User/Page"));
-const CouponPage = lazy(() => import("views/pages/Coupon/CouponPage"));
+const UserPage = lazy(() => import("views/pages/User/UserPage"));
+const AddUserPage = lazy(() => import("views/pages/User/Action/Forms/AddUserPage"));
+const EditUserPage = lazy(() => import("views/pages/User/Action/Forms/EditUserPage"));
+
 const SupportedCityPage = lazy(() => import("views/pages/SupportedCity/SupportedCityPage"));
+const CategoryPage = lazy(() => import("views/pages/Category/CategoryPage"));
 
 const login = lazy(() => import("./views/pages/authentication/login/Login"));
 const error404 = lazy(() => import("./views/pages/misc/error/404"));
@@ -136,14 +140,14 @@ class AppRouter extends React.Component {
           />
                  <AppRoute
             exact
-            path="/dashboard/coupon"
-            component={CouponPage }
-            isPrivate
-          />
-                 <AppRoute
-            exact
             path="/dashboard/supportedcity"
             component={SupportedCityPage }
+            isPrivate
+          />
+            <AppRoute
+            exact
+            path="/dashboard/category"
+            component={CategoryPage }
             isPrivate
           />
              <AppRoute
@@ -158,7 +162,30 @@ class AppRouter extends React.Component {
             component={UserPage }
             isPrivate
           />
-       
+              <AppRoute
+            exact
+            path="/dashboard/user/add"
+            component={AddUserPage }
+            isPrivate
+          />
+              <AppRoute
+            exact
+            path="/dashboard/user/:id"
+            component={EditUserPage }
+            isPrivate
+          />
+        <AppRoute
+            exact
+            path="/dashboard/address"
+            component={AddressPage }
+            isPrivate
+          />
+            <AppRoute
+            exact
+            path="/dashboard/role"
+            component={RolePage }
+            isPrivate
+          />
             <AppRoute
             exact
             path="/dashboard/information/privacy"

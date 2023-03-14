@@ -6,13 +6,15 @@ import { useImagePreview } from 'hooks';
 import { useTranslation } from 'utility/language'
 export  function Field({ item }) {
     const t = useTranslation();
+    const [value, label] = item?.name.split(".");  
   return (
     <ValidatedField
       id={item?.name}
       type={item?.type} 
-      label={t(item?.name)}
+      label={t(value)}
       name={item?.name}
-      placeholder={t(item?.name)}
+      placeholder={t(value)}
+
     />
   );
 };
@@ -34,9 +36,10 @@ export  function FieldImg({ item }) {
 export  function FieldOption({ item }) {
     const t = useTranslation();
     const formik = useFormikContext();
+    const [value, label] = item?.name.split(".");  
   return (
   <>
- <SelectField label={t(item?.name)} options={convert_data_to_select(item?.option)} name={item?.name}
+ <SelectField label={t(value)} options={convert_data_to_select(item?.option)} name={item?.name}
     onChange={(opt) => { formik.setFieldValue(item?.name, opt.value) }} required />
   </>
           
@@ -60,8 +63,6 @@ return (
 );
 };
 export const filterDataByDynamicValue = (data, searchValue, searchKey) => {
-  const lowercaseSearchValue = searchValue?.toLowerCase();
-
   let keys;
   if (searchKey?.includes('.')) {
     keys = searchKey.split('.');
@@ -71,15 +72,12 @@ export const filterDataByDynamicValue = (data, searchValue, searchKey) => {
 
   return data.filter((item) => {
     let itemValue = item;
-
     for (const key of keys) {
-      itemValue = itemValue[key];
+      itemValue = itemValue?.[key];
     }
 
-    const lowercaseItemValue = itemValue?.toLowerCase();
-
-    if (lowercaseItemValue && lowercaseSearchValue) {
-      return lowercaseItemValue.includes(lowercaseSearchValue);
+    if (typeof itemValue === 'string' && searchValue) {
+      return itemValue.includes(searchValue);
     } else {
       return false;
     }
@@ -93,7 +91,7 @@ export const convert_data_to_select = (array=[])=>{
   }
   let new_array = []
 
-  array.map(e => new_array.push({label:e?.name, value:e?.id}))
+  array.map(e => new_array.push({label:e?.name, value:e?.name}))
 
   return new_array
 }
