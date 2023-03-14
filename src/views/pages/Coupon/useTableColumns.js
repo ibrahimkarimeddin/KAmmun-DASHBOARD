@@ -1,17 +1,16 @@
 import React, { useMemo } from "react";
-import { useDeleteCategory, useUpdateCategoryStatus } from "api/categories";
 import { useTranslation } from "utility/language";
 import Actions from "components/table/TableActions";
 // import { history } from "../../../history";
-import { mapTranslatedProperties } from "helpers/language";
 import { ToggleStatus } from "components/ToggleStatus";
 import HovarableImage from "components/HovarableImage";
 import { baseURL } from "api/config";
+import { useDeleteCoupon, useUpdateCoupon } from "api/coupon";
 
 const useTableColumns = (setEditModal, setObjectToEdit) => {
   const t = useTranslation();
-  const deleteMutation = useDeleteCategory();
-  const toggleMutation = useUpdateCategoryStatus();
+  const deleteMutation = useDeleteCoupon();
+  const toggleMutation = useUpdateCoupon();
 
   return useMemo(
    
@@ -38,6 +37,7 @@ const useTableColumns = (setEditModal, setObjectToEdit) => {
       {
         name: t("max_orders"),
         selector: "max_orders",
+        
         sortable: true,
         center: true,
       },

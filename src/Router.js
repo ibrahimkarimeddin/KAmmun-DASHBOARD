@@ -23,7 +23,7 @@ const AboutUsPage = lazy(() =>import("./views/pages/information/about_us/AboutUs
 const DeliveryMethodPage = lazy(() => import("views/pages/delivery_method/Page"));
 const Banner_Page = lazy(() => import("views/pages/Banner/BannerPage"));
 const UserPage = lazy(() => import("views/pages/User/UserPage"));
-const CouponPage = lazy(() => import("views/pages/Coupon/CouponPage"));
+const CouponPage = lazy(() => import("views/pages/Coupon/Page"));
 const AddUserPage = lazy(() => import("views/pages/User/Action/Forms/AddUserPage"));
 const EditUserPage = lazy(() => import("views/pages/User/Action/Forms/EditUserPage"));
 
