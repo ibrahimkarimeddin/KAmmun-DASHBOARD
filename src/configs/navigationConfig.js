@@ -2,14 +2,10 @@ import React from "react";
 import { Home } from "react-feather";
 import { AiFillQuestionCircle} from "react-icons/ai"
 import {FaUserFriends , FaCity ,FaWarehouse,FaEllo,FaUserShield,FaUserTie} from "react-icons/fa"
-import { MdPrivacyTip } from "react-icons/md";
 import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
 import { BsInfoCircle,} from "react-icons/bs"
 import { ImLocation } from "react-icons/im"
-import {FaUserFriends , FaCity ,FaWarehouse,FaEllo} from "react-icons/fa"
 import { MdPrivacyTip } from "react-icons/md";
-import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
-import { BsInfoCircle,} from "react-icons/bs"
 
 
 const navigationConfig = [

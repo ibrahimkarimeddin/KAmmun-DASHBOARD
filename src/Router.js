@@ -7,6 +7,7 @@ import { ContextLayout } from "./utility/context/Layout";
 import { AuthComponent } from "Mix/AuthComponent";
 import Loading from "Mix/Loading";
 import Redirec from "views/pages/Redirect/Redirect";
+import CategoryPage from "views/pages/Category/CategoryPage";
 
 
 
@@ -141,8 +142,14 @@ class AppRouter extends React.Component {
           />
                  <AppRoute
             exact
-            path="/supportedcity"
+            path="/dashboard/supportedcity"
             component={SupportedCityPage }
+            isPrivate
+          />
+             <AppRoute
+            exact
+            path="/dashboard/category"
+            component={CategoryPage }
             isPrivate
           />
                <AppRoute

@@ -25,7 +25,7 @@ const Page = (props) => {
     setobjectToEdit([]);
   };
   useEffect(() => {
-    if (Array.isArray(Data)) {
+    if (Array.isArray([])) {
       if (searchText) {
         setFilteredData(
           filterDataByDynamicValue(Data, searchText, SearchBy)
