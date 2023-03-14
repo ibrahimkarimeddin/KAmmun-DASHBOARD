@@ -1,0 +1,46 @@
+.Actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    max-width: 122px;
+
+}
+.Page{
+   button{
+    margin-bottom:2vh;
+    font-weight: bold;
+   }
+   //// Name Header
+   .irAQQI{
+    color:#597f5c;
+    font-weight: bold;
+    cursor: pointer;
+    
+
+   }
+
+   
+}
+.K_Flex{
+    display: flex; justify-content: space-between; align-items: center; 
+}
+.KK_Flex{
+    display: flex; justify-content: space-between; align-items: center;  gap: 20px;
+}
+/// search selector
+.css-yk16xz-control,.css-1pahdxg-control{
+    min-width: 208px;
+    min-height: 42px !important;
+outline: none;
+}
+.none{
+    display: none !important;
+  }
+  .address_title{
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+
+}
