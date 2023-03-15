@@ -35,8 +35,8 @@ const useTableColumns = (setEditModal, setObjectToEdit) => {
         width:'80px'
       },
       {
-        name: t("max_orders"),
-        selector: "max_orders",
+        name: t("min_cost"),
+        selector: "min_cost",
         
         sortable: true,
         center: true,
@@ -54,7 +54,10 @@ const useTableColumns = (setEditModal, setObjectToEdit) => {
         name: t("expiration_date"),
         selector: "expiration_date",
         sortable: true,
-        cell:(row)=>row?.expiration_date
+        cell:(row)=>{
+          console.log(row)
+          return row?.expiration_date
+        }
      
       },
       {

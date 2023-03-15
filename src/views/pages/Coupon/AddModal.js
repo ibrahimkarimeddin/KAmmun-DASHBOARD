@@ -18,7 +18,9 @@ const AddModal = ({ isOpen, setIsOpen }) => {
   const { mutate: add, isSuccess, isLoading } = useAddCoupon();
 
   const handleSubmit = (values) => {
-    add(getDataToSend(values));
+     values['expiration_date'] =values?.expiration_date.replace('T',' ')+':00'
+    values['coupon_id'] = 1;
+    add(values);
   };
 
   React.useEffect(() => {
@@ -28,7 +30,7 @@ const AddModal = ({ isOpen, setIsOpen }) => {
   }, [isSuccess, setIsOpen]);
 
   return (
-    <Modal centered isOpen={isOpen} size="lg">
+    <Modal centered isOpen={isOpen} size="xl">
       <ModalHeader toggle={() => setIsOpen((v) => !v)}>
         {t("add")}
       </ModalHeader>

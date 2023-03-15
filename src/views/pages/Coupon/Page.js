@@ -13,7 +13,7 @@ import EditModal from "./EditModal";
 import AddModal from "./AddModal";
 import { useGetAllCoupon } from "api/coupon";
 
-const Page = () => {
+const CouponPage = () => {
   const t = useTranslation();
   const isAuthorized = useIsAuthorized();
 
@@ -78,4 +78,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default CouponPage;

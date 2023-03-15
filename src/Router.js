@@ -6,10 +6,15 @@ import Spinner from "./components/@vuexy/spinner/Loading-spinner";
 import { ContextLayout } from "./utility/context/Layout";
 import { AuthComponent } from "Mix/AuthComponent";
 import Loading from "Mix/Loading";
+
 import Redirec from "views/pages/Redirect/Redirect";
+
+
+
 const RolePage = lazy(() => import("views/pages/Role/RolePage"));
 const AddressPage = lazy(() => import("views/pages/Address/AddressPage"));
 
+const CouponPage = lazy(() => import("views/pages/Coupon/Page"));
 
 
 const AdminPage = lazy(() => import("views/pages/admins/AdminsPage"));
@@ -152,8 +157,8 @@ class AppRouter extends React.Component {
           />
              <AppRoute
             exact
-            path="/dashboard/category"
-            component={CategoryPage }
+            path="/dashboard/coupon"
+            component={CouponPage }
             isPrivate
           />
                <AppRoute

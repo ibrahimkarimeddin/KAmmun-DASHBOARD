@@ -23,7 +23,8 @@ const EditModal = ({ isOpen, setIsOpen, objectToEdit, setObjectToEdit }) => {
     useImagePreview(category_image);
 
   const handleSubmit = (values) => {
-    update(getDataToSend({ ...values, category_id: objectToEdit.id }));
+    console.log(objectToEdit)
+    update(getDataToSend({ ...values, coupon_id: objectToEdit.id }));
   };
 
   React.useEffect(() => {
@@ -38,7 +39,7 @@ const EditModal = ({ isOpen, setIsOpen, objectToEdit, setObjectToEdit }) => {
   }, [isOpen, setPreview, category_image]);
 
   return (
-    <Modal centered isOpen={isOpen} size="lg">
+    <Modal centered isOpen={isOpen} size="xl">
       <ModalHeader toggle={() => setIsOpen((v) => !v)}>
         {t("edit_category")}
       </ModalHeader>

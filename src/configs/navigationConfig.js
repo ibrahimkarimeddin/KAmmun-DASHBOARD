@@ -6,6 +6,8 @@ import { MdPrivacyTip } from "react-icons/md";
 import { GiVerticalBanner,GiPlayerTime,GiKing} from "react-icons/gi";
 import { BsInfoCircle,} from "react-icons/bs"
 import { ImLocation } from "react-icons/im"
+import {RiCoupon2Fill} from 'react-icons/ri'
+import { BiCategoryAlt } from "react-icons/bi";
 
 const navigationConfig = [
   {
@@ -90,7 +92,7 @@ const navigationConfig = [
   {
     id: "category",
     title: "category",
-    icon: <FaEllo size={20} />,
+    icon: <BiCategoryAlt size={20} />,
     type: "item",
     navLink: "/dashboard/category",
   
@@ -98,11 +100,11 @@ const navigationConfig = [
     
   },
   {
-    id: "category",
-    title: "category",
-    icon: <FaEllo size={20} />,
+    id: "coupon",
+    title: "coupon",
+    icon: <RiCoupon2Fill size={20} />,
     type: "item",
-    navLink: "/dashboard/category",
+    navLink: "/dashboard/coupon",
 
   },
   {

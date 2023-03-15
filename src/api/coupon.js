@@ -10,7 +10,7 @@ import {
     GET: `/api/dashboard/coupon`,
     GET_ALL: `/api/dashboard/coupon/all`,
     ADD: `/api/dashboard/coupon/add`,
-    UPDATE: `/api/dashboard/coupon/update`,
+    UPDATE: `/api/dashboard/coupon/edit`,
     DELETE: `/api/dashboard/coupon/delete`,
     UPDATE_STATUS: `/api/dashboard/coupon/update_category_status`,
   };
@@ -20,7 +20,7 @@ import {
   export const useAddCoupon = () => useAddMutation(KEY, API.ADD);
   export const useUpdateCoupon = () => useUpdateMutation(KEY, API.UPDATE);
   export const useDeleteCoupon = () =>
-    useDeleteMutation(KEY, API.DELETE, "category_id", "categories");
+    useDeleteMutation(KEY, API.DELETE, "coupon_id", "categories");
   export const useUpdateCategoryStatus = () =>
     useToggleStatus(KEY, API.UPDATE_STATUS, "category_id", "categories");
   
